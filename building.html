@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Xyris</title>
+        <link rel="icon" type="image/x-icon" href="local_parking_24dp_78A75A_FILL0_wght400_GRAD0_opsz24.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav> <h1 class="effect"><a href="R1000.html">XYRIS</a></h1> <h4 class="effect"><a href="index.html">Home</a></h4></nav>
+        <div id="effectMouse"></div>
+        <a href="tel:+27 71 909 7509" class="book-call-button effect">Book a Call <img src="phone_in_talk_24dp_F3F3F3_FILL0_wght400_GRAD0_opsz24.png" alt="" width="10%" /> </a>
+        <div class="form-container">
+          <form id="contactForm" class="form">
+              <div class="form-group">
+                  <label for="email">Company Email</label>
+                  <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                  <label for="textarea">Want to start building?</label>
+                  <textarea name="textarea" id="textarea" rows="10" cols="50" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="textarea">Questions(optional)</label>
+                <textarea name="textarea" id="textarea" rows="10" cols="50" ></textarea>
+            </div>
+              <!-- Success and error messages -->
+              <div class="d-none" id="submitSuccessMessage">
+                  <div class="text-center mb-3 mt-2 text-white">
+                      <div class="fw-bolder">Form submission successful!</div>
+                     
+                  </div>
+              </div>
+              <div class="d-none" id="submitErrorMessage">
+                  <div class="text-center mb-3 mt-2 text-white">
+                      <div class="fw-bolder">Form submission failed! Please try again.</div>
+                  </div>
+              </div>
+      
+              <button class="form-submit-btn effect" type="submit">Submit</button>
+          </form>
+      </div>
+
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        emailjs.init('2EWLqP3FxFFCt8apv'); // Your User ID
+    })();
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Send the form data using EmailJS
+        emailjs.sendForm('service_qkhe3c4', 'template_4fxff8e', this)
+            .then(function() {
+                // Success feedback
+                document.getElementById('submitSuccessMessage').classList.remove('d-none');
+                document.getElementById('submitErrorMessage').classList.add('d-none');
+            }, function(error) {
+                // Error feedback and log error details
+                document.getElementById('submitErrorMessage').classList.remove('d-none');
+                document.getElementById('submitSuccessMessage').classList.add('d-none');
+                console.error('Error details:', error); // Log error details to the console
+            });
+    });
+
+
+      //for the cursor mfundo
+      document.addEventListener('DOMContentLoaded', () => {
+        const body = document.querySelector('body');
+        const mouse = document.getElementById('effectMouse');
+      
+        body.addEventListener('mousemove', (e) => {
+          let scale = 1;
+          if (e.target.classList.contains('effect')) {
+            scale = 3;
+          }
+          // Combine translateX and translateY into a single translate
+          mouse.style.transform = `
+            translate(${e.clientX}px, ${e.clientY}px) 
+            scale(${scale})
+          `;
+        });
+      
+        // Use 'mouseleave' on the window to detect when the cursor leaves the viewport
+        window.addEventListener('mouseleave', () => {
+          mouse.style.transform = 'scale(0)';
+        });
+      
+        // Optionally, reset the cursor when it re-enters the viewport
+        window.addEventListener('mouseenter', () => {
+          mouse.style.transform = 'scale(1)';
+        });
+      });
+</script>
+<div class="copyright">
+  All Images © 2024 XYRIS
+</div>
+          </body>
+        
+         <style>
+            body{
+                background-color: #212121;
+                margin: 0;
+                padding: 0;
+            }
+            nav{color: antiquewhite;
+                padding-left: 10px;
+                font-weight: bold;
+                 justify-content: space-between;
+            }
+            .form-container {
+              width:100%;
+              background: linear-gradient(#212121, #212121) padding-box,
+                          linear-gradient(145deg, transparent 35%,#6c757d, #343a40) border-box;
+              border: 2px solid transparent;
+              padding: 32px 24px;
+              font-size: 14px;
+              font-family: inherit;
+              color: white;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              box-sizing: border-box;
+              border-radius: 16px;
+              top: 100px;
+              position: relative;
+            }
+            
+            .form-container button:active {
+              scale: 0.95;
+            }
+            
+            .form-container .form {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+            }
+            
+            .form-container .form-group {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+            }
+            
+            .form-container .form-group label {
+              display: block;
+              margin-bottom: 5px;
+              color: #717171;
+              font-weight: 600;
+              font-size: 12px;
+            }
+            
+            .form-container .form-group input {
+              width: 100%;
+              padding: 12px 16px;
+              border-radius: 8px;
+              color: #fff;
+              font-family: inherit;
+              background-color: transparent;
+              border: 1px solid #414141;
+            }
+            
+            .form-container .form-group textarea {
+              width: 100%;
+              padding: 12px 16px;
+              border-radius: 8px;
+              resize: none;
+              color: #fff;
+              height: 96px;
+              border: 1px solid #414141;
+              background-color: transparent;
+              font-family: inherit;
+            }
+            
+            .form-container .form-group input::placeholder {
+              opacity: 0.5;
+            }
+            
+            .form-container .form-group input:focus {
+              outline: none;
+              border-color: #e81cff;
+            }
+            
+            .form-container .form-group textarea:focus {
+              outline: none;
+              border-color: #e81cff;
+            }
+            a{
+              color:#adb5bd;
+            }
+            a:hover{
+              color: #6c757d;
+            }
+            .form-container .form-submit-btn {
+              display: flex;
+              align-items: flex-start;
+              justify-content: center;
+              align-self: flex-start;
+              font-family: inherit;
+              color: #adb5bd;
+              font-size: 16px;
+                font-weight: bold;
+              width: 40%;
+              background: #313131;
+              border: 1px solid #414141;
+              padding: 12px 16px;
+              font-size: inherit;
+              gap: 8px;
+              margin-top: 8px;
+              cursor: pointer;
+              border-radius: 6px;
+            }
+            
+            .form-container .form-submit-btn:hover {
+              background-color: rgba(13, 14, 13, 0.356);
+                color: antiquewhite;
+              }
+            
+            
+
+              .book-call-button {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color:transparent;
+        border: #adb5bd solid 1px; 
+                color: #adb5bd;
+                padding: 15px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                z-index: 200;
+            }
+            
+            .book-call-button img {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .book-call-button:hover {
+              background-color: rgba(0, 0, 0, 0.212);
+              color: beige;
+          }
+            
+            @media (max-width: 768px) {
+                .book-call-button {
+                    padding: 15px; /* Adjust padding */
+                    font-size: 0; /* Hide text */
+                    height: 60px; /* Add explicit height to maintain centering */
+                    justify-content: center; /* Center the image horizontally */
+                }
+            
+                .book-call-button img {
+                    width: 24px; /* Increase image size */
+                    height: 24px;
+                }
+            
+            }
+
+
+            #effectMouse {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 20px;
+              height: 20px;
+              background-color: rgba(255, 255, 255, 0.5);
+              border-radius: 50%;
+              pointer-events: none;
+              transform: translate(-50%, -50%) scale(1);
+              transition: transform 0.1s ease, background-color 0.3s ease;
+              z-index: 9999;
+            }
+
+
+            .copyright{
+              width: auto;
+              height: auto;
+              pointer-events: none;
+              font-size: 18px;
+              background: transparent;
+              color:#adb5bd ;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+              position: fixed;
+              bottom: 0%;
+              left: 50%;
+              transform: translate(-50%,-30%);
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 30px;
+              }
+
+              .copyright{
+                width: 85%;
+                padding: 20px;
+                font-size: 15px;
+                }
+            </style>

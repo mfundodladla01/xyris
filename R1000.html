@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>XYRIS</title>
+        <link rel="icon" type="image/x-icon" href="local_parking_24dp_78A75A_FILL0_wght400_GRAD0_opsz24.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand effect" href="building.html">Web To World</a>
+                <a class="nav-link effect" href="index.html"><h5>home</h5></a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="effectMouse"></div>
+        <a href="tel:+27 71 909 7509" class="book-call-button effect">Book a Call <img src="phone_in_talk_24dp_F3F3F3_FILL0_wght400_GRAD0_opsz24.png" alt="" width="10%" /> </a>
+
+
+        
+        <div class="item-hints">
+          <div class="hint" data-position="4">
+            <span class="hint-radius"></span>
+            <span class="hint-dot"> <a href="https://darling-concha-4a0f78.netlify.app" class="tooltip-link effect">Tip</a></span>
+            <div class="hint-content do--split-children">
+              <p>Click To View Gallery.</p>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="form-container">
+          <form id="contactForm" class="form"> <!-- Added id="contactForm" -->
+            <div class="form-group">
+              <label for="email">Company Email</label>
+              <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="ideas">Ideas for your custom site (optional)</label>
+              <textarea name="ideas" id="ideas" rows="10" cols="50"></textarea> <!-- Changed id and name -->
+            </div>
+            <div class="d-none" id="submitSuccessMessage">
+              <div class="text-center mb-3 mt-2 text-white">
+                <div class="fw-bolder">Form submission successful!</div>
+              </div>
+            </div>
+            <div class="d-none" id="submitErrorMessage">
+              <div class="text-center mb-3 mt-2 text-white">
+                <div class="fw-bolder">Form submission failed! Please try again.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget (According to the price list)</label>
+              <textarea name="budget" id="budget" rows="10" cols="50" required></textarea> <!-- Changed id and name -->
+            </div>
+            <button class="form-submit-btn effect" type="submit">Submit</button>
+          </form>
+        </div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+        <script type="text/javascript">
+          (function() {
+            emailjs.init('2EWLqP3FxFFCt8apv'); // Your User ID
+          })();
+        
+          document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+        
+            // Send the form data using EmailJS
+            emailjs.sendForm('service_qkhe3c4', 'template_4fxff8e', this)
+              .then(function() {
+                // Success feedback
+                document.getElementById('submitSuccessMessage').classList.remove('d-none');
+                document.getElementById('submitErrorMessage').classList.add('d-none');
+              }, function(error) {
+                // Error feedback and log error details
+                document.getElementById('submitErrorMessage').classList.remove('d-none');
+                document.getElementById('submitSuccessMessage').classList.add('d-none');
+                console.error('Error details:', error); // Log error details to the console
+              });
+          });
+
+
+           //for the cursor mfundo
+    let body = document.querySelector('body');
+    let mouse = document.getElementById('effectMouse');
+    body.addEventListener('mousemove', (e) => {
+      let scale = 1;
+      if (e.target.classList.contains('effect')) {
+        scale = 3;
+      }
+      scale = `scale(${scale})`;
+    
+      mouse.style.transform = `
+        translateX(${e.clientX}px)
+        translateY(${e.clientY}px)
+        ${scale}
+      `;
+    });
+    
+    body.addEventListener('mouseout', (e) => {
+      mouse.style.transform = `
+        translateX(${e.clientX}px)
+        translateY(${e.clientY}px)
+        scale(0)
+      `;
+    });
+        </script>
+        
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6"><img class="img-fluid" src="Device Set_v01_Mockup.jpg" alt="..." /></div>
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white">Option 2: Standard Website</h4>
+                        <p class="mb-0 text-white-50">
+                            -Up to 5 pages (Home, About, Contact)
+                            <br>  -Custom design with your branding
+                            <br>   -Responsive design (desktop and mobile)
+                            <br>   -Basic SEO setup
+                            <br>  -Google Maps integration</p>
+                              <h5>Price: R1500</h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+    <div class="col-lg-6"><img class="img-fluid" src="Free Responsive Screen Devices no leaf.jpg" alt="..." /></div>
+    <div class="col-lg-6">
+        <div class="bg-black text-center h-100 project">
+            <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center text-lg-left">
+                    <h4 class="text-white">Option 3: Premium Website</h4>
+                    <p class="mb-0 text-white-50">
+                             -Up to 20 pages
+                       <br>  -Fully custom design with advanced features
+                       <br>  -E-commerce functionality (if required)
+                       <br>  -Comprehensive SEO optimization
+                       <br>  -Blog integration</p>
+                       <h5>Price: R3000</h5>
+                       
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6"><img class="img-fluid" src="MockUp_2.jpg" alt="..." /></div>
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white">Option 1: Basic Website</h4>
+                        <p class="mb-0 text-white-50">
+                           -Single-page website
+                           
+                            <br>-Basic design and layout
+                            <br> -Contact form integration
+                            <br> -Mobile-friendly layout
+                            <br> -Social media links</p>
+                            <h5>Price: R1000</h5>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+      All Images © 2024 XYRIS
+  </div>
+    </body>
+        <!-- Masthead-->
+         <style>
+            body{
+                background-color: #212121;
+                margin: 0;
+                padding: 0;
+            }
+            .form-container {
+              width:100%;
+              background: linear-gradient(#212121, #212121) padding-box,
+                          linear-gradient(145deg, transparent 35%,#6c757d, #343a40) border-box;
+              border: 2px solid transparent;
+              padding: 32px 24px;
+              font-size: 14px;
+              font-family: inherit;
+              color: white;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              box-sizing: border-box;
+              border-radius: 16px;
+              padding-top: 100px;
+              position: relative;
+            }
+            
+            .form-container button:active {
+              scale: 0.95;
+            }
+            
+            .form-container .form {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+            }
+            
+            .form-container .form-group {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+            }
+            a{
+              color:#adb5bd;
+            }
+            a:hover{
+              color: #6c757d;
+            }
+            .form-container .form-group label {
+              display: block;
+              margin-bottom: 5px;
+              color: #717171;
+              font-weight: 600;
+              font-size: 12px;
+            }
+            
+            .form-container .form-group input {
+              width: 100%;
+              padding: 12px 16px;
+              border-radius: 8px;
+              color: #fff;
+              font-family: inherit;
+              background-color: transparent;
+              border: 1px solid #414141;
+            }
+            
+            .form-container .form-group textarea {
+              width: 100%;
+              padding: 12px 16px;
+              border-radius: 8px;
+              resize: none;
+              color: #fff;
+              height: 96px;
+              border: 1px solid #414141;
+              background-color: transparent;
+              font-family: inherit;
+            }
+            
+            .form-container .form-group input::placeholder {
+              opacity: 0.5;
+            }
+            
+            .form-container .form-group input:focus {
+              outline: none;
+            
+            }
+            
+            .form-container .form-group textarea:focus {
+              outline: none;
+        
+            }
+            
+            .form-container .form-submit-btn {
+              display: flex;
+              align-items: flex-start;
+              justify-content: center;
+              align-self: flex-start;
+              font-family: inherit;
+              color: #adb5bd;
+              font-size: 16px;
+                font-weight: bold;
+              width: 40%;
+              background: #313131;
+              border: 1px solid #414141;
+              padding: 12px 16px;
+              font-size: inherit;
+              gap: 8px;
+              margin-top: 8px;
+              cursor: pointer;
+              border-radius: 6px;
+            }
+            
+            .form-container .form-submit-btn:hover {
+              background-color: rgba(13, 14, 13, 0.356);
+              color: aliceblue;
+            }
+            
+            
+            
+    .book-call-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color:transparent;
+        border: #adb5bd solid 1px; 
+      color: #adb5bd;
+      padding: 15px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 200;
+  }
+  
+  .book-call-button img {
+      width: 20px;
+      height: 20px;
+  }
+  
+  .book-call-button:hover {
+    background-color: rgba(0, 0, 0, 0.212);
+    color: beige;
+}
+  
+  @media (max-width: 768px) {
+      .book-call-button {
+          padding: 15px; /* Adjust padding */
+          font-size: 0; /* Hide text */
+          height: 60px; /* Add explicit height to maintain centering */
+          justify-content: center; /* Center the image horizontally */
+      }
+  
+      .book-call-button img {
+          width: 24px; /* Increase image size */
+          height: 24px;
+      }
+  }
+  
+
+  .item-hints {
+    
+      cursor: pointer;
+      position: fixed; /* Fix position */
+      bottom: 20px; /* Position from the bottom */
+      left: 20px; /* Position from the left */
+      display: flex;
+      justify-content: flex-start;
+      padding-right: 170px;
+      z-index: 10; /* Ensure it stays on top */
+    }
+    .item-hints .hint {
+      margin: 0 auto; /* Remove large margins */
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .item-hints .hint-dot {
+      z-index: 3;
+      border: 1px solid #adb5bd;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      transform: translate(0, 0) scale(0.95);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #adb5bd;
+    }
+    .item-hints .hint-radius {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -125px 0 0 -125px;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0);
+    }
+    .item-hints .hint[data-position="4"] .hint-content {
+      bottom: 85px;
+      left: 50%;
+      margin-left: 56px;
+    }
+    .item-hints .hint-content {
+      width: 300px;
+      position: absolute;
+      z-index: 5;
+      padding: 35px 0;
+      opacity: 0;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+      color: #adb5bd;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .item-hints .hint:hover .hint-content {
+      position: absolute;
+      z-index: 5;
+      padding: 35px 0;
+      opacity: 1;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+      color: #adb5bd;
+      visibility: visible;
+      pointer-events: none;
+    }
+    .item-hints .hint-content::before {
+      width: 0px;
+      bottom: 29px;
+      left: 0;
+      content: "";
+      background-color: #fff;
+      height: 1px;
+      position: absolute;
+      transition: width 0.4s;
+    }
+    .item-hints .hint:hover .hint-content::before {
+      width: 180px;
+      transition: width 0.4s;
+    }
+    .item-hints .hint-content::after {
+      transform-origin: 0 50%;
+      transform: rotate(-225deg);
+      bottom: 29px;
+      left: 0;
+      width: 80px;
+      content: "";
+      background-color: #fff;
+      height: 1px;
+      position: absolute;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      transition-delay: 0s;
+    }
+    .item-hints .hint:hover .hint-content::after {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .tooltip-link {
+      color: #adb5bd;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+    }
+    
+
+    .copyright{
+      width: auto;
+      height: auto;
+      
+      font-size: 18px;
+      background: transparent;
+      color:#adb5bd ;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      position: fixed;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%,-30%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      }
+      .copyright{
+        width: 85%;
+        padding: 20px;
+        font-size: 15px;
+        }
+            </style>
